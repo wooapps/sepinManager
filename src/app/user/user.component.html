@@ -1,0 +1,92 @@
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Gerador de e-mails SEPIN</h4>
+                    </div>
+                    <div class="content">
+                        <form (ngSubmit)= "onSubmit(f.value)" #f= "ngForm">
+                            <div class="row">
+                            <!-- <div class ="text-center">
+                                <table class="sjs-table">
+                                    <tr *ngFor="let row of data">
+                                        <td *ngFor="let val of row">
+                                        {{val}}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div> -->
+                            <div class = "text-center">
+                                    <input type="file" (change)="onFileChange($event)" multiple="false" />
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nome do Documentador SEPIN</label>
+                                        <input type="text" class="form-control border-input" placeholder="Documentador"
+                                        [(ngModel)]="emailForm.docSepin"
+                                        name= "docSepin" id= "docSepin" >
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Empresa do Documentador SEPIN</label>
+                                        <input type="text" class="form-control border-input" placeholder="Empresa"
+                                        [(ngModel)]="emailForm.empresaSepin"
+                                        name= "empresaSepin" id= "empresaSepin">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nome do RH</label>
+                                        <input type="text" class="form-control border-input" placeholder="Nome do RH"
+                                        [(ngModel)]="emailForm.nomeRh"
+                                        name= "nomeRh" id= "nomeRh">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">E-mail do RH</label>
+                                        <input type="email" class="form-control border-input" placeholder="Email"
+                                        [(ngModel)]="emailForm.emailRh"
+                                        name= "emailRh" id= "emailRh">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nome do Projeto</label>
+                                        <input type="text" class="form-control border-input" placeholder="Projeto"
+                                        [(ngModel)]="emailForm.projeto"
+                                        name= "projeto" id= "projeto">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Ano Base</label>
+                                            <input type="text" class="form-control border-input" placeholder="Ano Base"
+                                            [(ngModel)]="emailForm.anoBase"
+                                            name= "anoBase" id= "anoBase">
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-info btn-fill btn-wd">Gerar</button>
+                            </div>
+                            <div class = "text-center" *ngFor= 'let email of emailFormatArray'>
+                                <a [href]="email" target="_blank">CLIQUE-AQUI PARA ENVIAR O E-MAIL</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
