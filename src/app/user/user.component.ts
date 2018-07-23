@@ -23,7 +23,7 @@ export class UserComponent implements OnInit{
     data: any;
     textFormatArray = new Array();
     emailFormatArray = new Array;
-    
+    clicked: boolean;
 
     ngOnInit(){
     }
@@ -69,5 +69,9 @@ export class UserComponent implements OnInit{
             )
             console.log(this.emailFormat)
         }
+    }
+    onClick()
+    {
+        this.clicked = true;
     }
 }

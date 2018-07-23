@@ -6,8 +6,7 @@
                         <h4 class="title">Gerador de e-mails SEPIN</h4>
                     </div>
                     <div class="content">
-                        <form (ngSubmit)= "onSubmit(f.value)" #f= "ngForm">
-                            <div class="row">
+                        <form (ngSubmit)= "onSubmit(f.value)" #f= "ngForm">                            
                             <!-- <div class ="text-center">
                                 <table class="sjs-table">
                                     <tr *ngFor="let row of data">
@@ -17,9 +16,16 @@
                                     </tr>
                                 </table>
                             </div> -->
-                            <div class = "text-center">
-                                    <input type="file" (change)="onFileChange($event)" multiple="false" />
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class = "text-center">
+                                            <input type="file" (change)="onFileChange($event)" multiple="false" />
+                                        </div>
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Nome do Documentador SEPIN</label>
@@ -37,26 +43,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Nome do RH</label>
-                                        <input type="text" class="form-control border-input" placeholder="Nome do RH"
-                                        [(ngModel)]="emailForm.nomeRh"
-                                        name= "nomeRh" id= "nomeRh">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">E-mail do RH</label>
-                                        <input type="email" class="form-control border-input" placeholder="Email"
-                                        [(ngModel)]="emailForm.emailRh"
-                                        name= "emailRh" id= "emailRh">
-                                    </div>
-                                </div>
-                            </div>
-
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -76,7 +62,7 @@
                                     </div>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-info btn-fill btn-wd">Gerar</button>
+                                <button type="submit" class="btn btn-info btn-fill btn-wd" >Gerar</button>
                             </div>
                             <div class = "text-center" *ngFor= 'let email of emailFormatArray'>
                                 <a [href]="email" target="_blank">CLIQUE-AQUI PARA ENVIAR O E-MAIL</a>
